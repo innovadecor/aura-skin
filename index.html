@@ -1,374 +1,297 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #8cd3fe; -webkit-text-stroke: #8cd3fe}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #c27e65; -webkit-text-stroke: #c27e65}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d7378; -webkit-text-stroke: #6d7378}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #71c083; -webkit-text-stroke: #71c083}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca; min-height: 16.0px}
-    span.s1 {font-kerning: none; background-color: #171818}
-    span.s2 {font-kerning: none; color: #8cd3fe; background-color: #171818; -webkit-text-stroke: 0px #8cd3fe}
-    span.s3 {font-kerning: none; color: #6d6d6d; background-color: #171818; -webkit-text-stroke: 0px #6d6d6d}
-    span.s4 {font-kerning: none; color: #cacaca; background-color: #171818; -webkit-text-stroke: 0px #cacaca}
-    span.s5 {font-kerning: none; color: #c27e65; background-color: #171818; -webkit-text-stroke: 0px #c27e65}
-    span.s6 {font-kerning: none; color: #4689cc; background-color: #171818; -webkit-text-stroke: 0px #4689cc}
-    span.s7 {font-kerning: none; color: #b76ff7; background-color: #171818; -webkit-text-stroke: 0px #b76ff7}
-    span.s8 {font-kerning: none; color: #d4d4d4; background-color: #171818; -webkit-text-stroke: 0px #d4d4d4}
-    span.s9 {font-kerning: none}
-    span.s10 {font-kerning: none; color: #a7c598; background-color: #171818; -webkit-text-stroke: 0px #a7c598}
-    span.s11 {font-kerning: none; color: #71c083; background-color: #171818; -webkit-text-stroke: 0px #71c083}
-    span.s12 {font-kerning: none; color: #f67c30; background-color: #171818; -webkit-text-stroke: 0px #f67c30}
-    span.s13 {font-kerning: none; color: #ee2e38; background-color: #171818; -webkit-text-stroke: 0px #ee2e38}
-    span.s14 {font-kerning: none; color: #36c0a0; background-color: #171818; -webkit-text-stroke: 0px #36c0a0}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Skin | Tienda Oficial de Belleza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fafaf9;
+            color: #1c1917;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .cart-sidebar {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cart-open {
+            transform: translateX(0) !important;
+        }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"es"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">Aura Skin | Tienda Oficial de Belleza</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.jsdelivr.net/npm/chart.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/lucide@latest"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Chosen Palette: Luxury Gold &amp; Stone (Fondo Stone-50, Acentos Amber-600, Texto Stone-900) --&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Application Structure Plan: Se ha diseñado una aplicación de comercio electrónico de una sola página (SPA) optimizada para la conversión. La estructura incluye: 1. Hero impactante para captura de atención, 2. Catálogo interactivo de productos con sistema de carrito, 3. Sección de validación mediante datos clínicos (gráficos de eficacia) para construir confianza, y 4. Footer informativo. Se eligió este flujo porque en cosmética la prueba social y los datos de resultados son los que cierran la venta. --&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Visualization &amp; Content Choices: Resultados Clínicos -&gt; Comparación de Hidratación -&gt; Gráfico de Líneas -&gt; Chart.js (Muestra el progreso real del uso de la crema). Ventas/Popularidad -&gt; Gráfico de Barras -&gt; Chart.js. NO SVG/Mermaid. --&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s7">@import</span><span class="s4"> </span><span class="s5">url</span><span class="s8">(</span><span class="s1">'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap'</span><span class="s8">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Plus Jakarta Sans'</span><span class="s8">,</span><span class="s4"> </span><span class="s5">sans-serif</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background-color:</span><span class="s1"> #fafaf9</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> #1c1917</span><span class="s8">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">scroll-behavior:</span><span class="s4"> </span><span class="s5">smooth</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">h1</span><span class="s8">,</span><span class="s1"> </span><span class="s6">h2</span><span class="s8">,</span><span class="s1"> </span><span class="s6">h3</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Playfair Display'</span><span class="s8">,</span><span class="s4"> </span><span class="s5">serif</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.chart-container</span><span class="s4"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s5">relative</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s10">700px</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-left:</span><span class="s1"> </span><span class="s5">auto</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-right:</span><span class="s1"> </span><span class="s5">auto</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s10">350px</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-height:</span><span class="s1"> </span><span class="s10">400px</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> #ffffff</span><span class="s8">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s10">1.5rem</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">1.5rem</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">4px</span><span class="s1"> </span><span class="s10">6px</span><span class="s1"> </span><span class="s10">-1px</span><span class="s1"> </span><span class="s5">rgba(</span><span class="s10">0</span><span class="s8">,</span><span class="s1"> </span><span class="s10">0</span><span class="s8">,</span><span class="s1"> </span><span class="s10">0</span><span class="s8">,</span><span class="s1"> </span><span class="s10">0.05</span><span class="s5">)</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.product-card:hover</span><span class="s4"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s5">translateY(</span><span class="s10">-8px</span><span class="s5">)</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.cart-sidebar</span><span class="s4"> </span><span class="s8">{</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s1">transform</span><span class="s4"> </span><span class="s10">0.4s</span><span class="s4"> </span><span class="s1">cubic-bezier(</span><span class="s10">0.4</span><span class="s8">,</span><span class="s4"> </span><span class="s10">0</span><span class="s8">,</span><span class="s4"> </span><span class="s10">0.2</span><span class="s8">,</span><span class="s4"> </span><span class="s10">1</span><span class="s1">)</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.cart-open</span><span class="s4"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s5">translateX(</span><span class="s10">0</span><span class="s5">)</span><span class="s1"> </span><span class="s7">!important</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"antialiased overflow-x-hidden"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Navegación --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">nav</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-stone-200"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex justify-between items-center h-20"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold tracking-tighter text-stone-900 uppercase italic"</span><span class="s3">&gt;</span><span class="s4">Aura</span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-amber-600 not-italic"</span><span class="s3">&gt;</span><span class="s4">Skin</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest text-stone-500"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#productos"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Catálogo</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#ciencia"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Eficacia</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#contacto"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Contacto</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center gap-6"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"toggleCart()"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative p-2 text-stone-900 hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s1"> </span><span class="s2">data-lucide</span><span class="s3">=</span><span class="s5">"shopping-bag"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-6 h-6"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"cart-count"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-sm"</span><span class="s3">&gt;</span><span class="s4">0</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">nav</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Carrito Lateral --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"cart-overlay"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed inset-0 bg-stone-900/40 z-[60] hidden backdrop-blur-sm"</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"toggleCart()"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">aside</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"cart-sidebar"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed top-0 right-0 h-full w-full max-w-md bg-white z-[70] shadow-2xl translate-x-full flex flex-col cart-sidebar"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"p-6 border-b border-stone-100 flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-bold"</span><span class="s3">&gt;</span><span class="s1">Bolsa de Compra</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"toggleCart()"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"p-2 hover:bg-stone-50 rounded-full text-stone-400"</span><span class="s3">&gt;&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">data-lucide</span><span class="s3">=</span><span class="s1">"x"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"cart-items"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex-1 overflow-y-auto p-6 space-y-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-stone-400 py-10 font-medium"</span><span class="s3">&gt;</span><span class="s1">Tu carrito está esperando por tus cremas.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"p-6 border-t border-stone-100 bg-stone-50"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex justify-between items-center mb-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-stone-500 font-medium"</span><span class="s3">&gt;</span><span class="s1">Total Estimado</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"cart-total"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold text-stone-900"</span><span class="s3">&gt;</span><span class="s4">$0.00</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full bg-stone-900 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors flex items-center justify-center gap-3"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>Finalizar Pedido</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-[10px] text-center text-stone-400 mt-4 uppercase tracking-widest font-bold"</span><span class="s3">&gt;</span><span class="s4">Pago Seguro por Mercado Pago</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">aside</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Hero Section --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">header</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"pt-32 pb-20 bg-stone-100"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"md:w-1/2"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs font-bold uppercase tracking-[0.3em] text-amber-600 mb-4 block"</span><span class="s3">&gt;</span><span class="s4">Cosmética Avanzada</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight"</span><span class="s3">&gt;</span><span class="s4">La ciencia de </span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"italic text-amber-600"</span><span class="s3">&gt;</span><span class="s4">tu resplandor.</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-lg text-stone-600 mb-10 max-w-lg leading-relaxed"</span><span class="s3">&gt;</span><span class="s1">Fórmulas botánicas diseñadas para restaurar, proteger y embellecer tu piel con resultados medibles desde la primera semana.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"flex gap-4"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#productos"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"px-8 py-4 bg-stone-900 text-white rounded-full font-bold hover:bg-stone-800 transition-all shadow-lg text-sm uppercase tracking-widest"</span><span class="s3">&gt;</span><span class="s4">Comprar Ahora</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"md:w-1/2 relative"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full h-[500px] bg-stone-200 rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.01]"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"[Producto de Belleza Aura Skin]"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">header</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Catálogo de Productos --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"productos"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-24 bg-white"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-16"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-4xl font-bold text-stone-900 mb-4"</span><span class="s3">&gt;</span><span class="s1">Nuestra Colección Esencial</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-stone-500 max-w-2xl mx-auto"</span><span class="s3">&gt;</span><span class="s1">Esta sección presenta nuestros productos estrella. Cada crema ha sido formulada para necesidades específicas de la piel, garantizando una absorción profunda y resultados duraderos.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Producto 1 --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&amp;w=600"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"[Sérum de Vitamina C]"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold mb-1 text-stone-900"</span><span class="s3">&gt;</span><span class="s4">Sérum Vitamina C</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold"</span><span class="s3">&gt;</span><span class="s4">Luminosidad &amp; Tono</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-stone-500 text-sm mb-6 leading-relaxed"</span><span class="s3">&gt;</span><span class="s1">Concentrado activo para unificar el tono y devolver el brillo natural a la piel opaca.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold text-stone-900"</span><span class="s3">&gt;</span><span class="s4">$45.00</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"addToCart('Sérum Vitamina C', 45, 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&amp;w=200')"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s1"> </span><span class="s2">data-lucide</span><span class="s3">=</span><span class="s5">"plus"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-5 h-5"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Producto 2 --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&amp;w=600"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"[Crema Nocturna]"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold mb-1 text-stone-900"</span><span class="s3">&gt;</span><span class="s4">Crema Nocturne</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold"</span><span class="s3">&gt;</span><span class="s4">Reparación Celular</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-stone-500 text-sm mb-6 leading-relaxed"</span><span class="s3">&gt;</span><span class="s1">Tratamiento intensivo de noche que restaura la barrera cutánea mientras descansas.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold text-stone-900"</span><span class="s3">&gt;</span><span class="s4">$38.00</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"addToCart('Crema Nocturne', 38, 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&amp;w=200')"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s1"> </span><span class="s2">data-lucide</span><span class="s3">=</span><span class="s5">"plus"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-5 h-5"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Producto 3 --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&amp;w=600"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"[Bálsamo Pureza]"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold mb-1 text-stone-900"</span><span class="s3">&gt;</span><span class="s4">Bálsamo Pureza</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold"</span><span class="s3">&gt;</span><span class="s4">Limpieza Consciente</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-stone-500 text-sm mb-6 leading-relaxed"</span><span class="s3">&gt;</span><span class="s1">Bálsamo limpiador suave que elimina impurezas sin alterar el pH natural de la dermis.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold text-stone-900"</span><span class="s3">&gt;</span><span class="s4">$22.00</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"addToCart('Bálsamo Pureza', 22, 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&amp;w=200')"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s1"> </span><span class="s2">data-lucide</span><span class="s3">=</span><span class="s5">"plus"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-5 h-5"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Sección de Eficacia Clínica --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"ciencia"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-24 bg-stone-50"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex flex-col lg:flex-row items-center gap-16"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"lg:w-1/2"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl font-bold mb-6 italic text-stone-900"</span><span class="s3">&gt;</span><span class="s4">Resultados </span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-amber-600"</span><span class="s3">&gt;</span><span class="s4">Comprobados.</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-lg text-stone-600 mb-8 leading-relaxed"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>En Aura Skin, los datos respaldan nuestra belleza. Este gráfico ilustra el incremento en la retención de hidratación durante un tratamiento de 30 días con nuestros productos esenciales. Observa cómo la barrera cutánea se fortalece progresivamente.</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 gap-8 mb-8"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white p-6 rounded-2xl shadow-sm border border-stone-100"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl font-bold text-stone-900"</span><span class="s3">&gt;</span><span class="s4">92%</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-stone-400 uppercase tracking-widest font-bold mt-2"</span><span class="s3">&gt;</span><span class="s4">Piel más hidratada</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white p-6 rounded-2xl shadow-sm border border-stone-100"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl font-bold text-stone-900"</span><span class="s3">&gt;</span><span class="s4">85%</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-stone-400 uppercase tracking-widest font-bold mt-2"</span><span class="s3">&gt;</span><span class="s4">Reducción de líneas</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"lg:w-1/2 w-full"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"chart-container"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"clinicalChart"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-xs text-stone-400 mt-6 italic"</span><span class="s3">&gt;</span><span class="s1">Gráfico de Eficacia: Incremento del % de hidratación dérmica acumulada (Día 1 al Día 30).</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Footer --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">footer</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"contacto"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-stone-900 text-white py-16"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4 text-center"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mb-12"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold tracking-tighter uppercase italic"</span><span class="s3">&gt;</span><span class="s4">Aura</span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-amber-600 not-italic"</span><span class="s3">&gt;</span><span class="s4">Skin</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-4 text-stone-500 max-w-sm mx-auto text-sm italic leading-relaxed"</span><span class="s3">&gt;</span><span class="s1">Expertos en cosmética botánica avanzada y cuidado consciente de la piel.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex justify-center gap-8 mb-12 text-stone-400 text-xs font-bold uppercase tracking-widest"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Instagram</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">TikTok</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-amber-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Soporte</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"pt-8 border-t border-stone-800 text-stone-600 text-[10px] uppercase font-bold tracking-[0.4em]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>&amp;copy; 2026 Aura Skin Cosmetic. Todos los derechos reservados.</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">footer</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Notificación Toast --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"toast"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed bottom-8 left-1/2 -translate-x-1/2 bg-stone-900 text-white px-6 py-3 rounded-full shadow-2xl z-[100] opacity-0 transition-opacity pointer-events-none flex items-center gap-3"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">data-lucide</span><span class="s3">=</span><span class="s1">"check-circle"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-amber-500 w-5 h-5"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-sm font-bold"</span><span class="s3">&gt;</span><span class="s1">¡Producto añadido a tu bolsa!</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// Inicializar Iconos</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>lucide</span><span class="s8">.</span><span class="s1">createIcons</span><span class="s8">();</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// Estado del Carrito</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> cart </span><span class="s8">=</span><span class="s1"> </span><span class="s8">[];</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> toggleCart</span><span class="s8">()</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> sidebar </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'cart-sidebar'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> overlay </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'cart-overlay'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>sidebar</span><span class="s8">.</span><span class="s1">classList</span><span class="s8">.</span><span class="s1">toggle</span><span class="s8">(</span><span class="s11">'cart-open'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>overlay</span><span class="s8">.</span><span class="s1">classList</span><span class="s8">.</span><span class="s1">toggle</span><span class="s8">(</span><span class="s11">'hidden'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> addToCart</span><span class="s8">(</span><span class="s1">name</span><span class="s8">,</span><span class="s1"> price</span><span class="s8">,</span><span class="s1"> img</span><span class="s8">)</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> existingItem </span><span class="s8">=</span><span class="s1"> cart</span><span class="s8">.</span><span class="s1">find</span><span class="s8">(</span><span class="s1">item </span><span class="s8">=&gt;</span><span class="s1"> item</span><span class="s8">.</span><span class="s1">name </span><span class="s8">===</span><span class="s1"> name</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> </span><span class="s8">(</span><span class="s1">existingItem</span><span class="s8">)</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>existingItem</span><span class="s8">.</span><span class="s1">qty</span><span class="s8">++;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">}</span><span class="s1"> </span><span class="s7">else</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>cart</span><span class="s8">.</span><span class="s1">push</span><span class="s8">({</span><span class="s1"> name</span><span class="s8">,</span><span class="s1"> price</span><span class="s8">,</span><span class="s1"> img</span><span class="s8">,</span><span class="s1"> qty</span><span class="s8">:</span><span class="s1"> </span><span class="s12">1</span><span class="s1"> </span><span class="s8">});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>updateCartUI</span><span class="s8">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>showToast</span><span class="s8">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> updateCartUI</span><span class="s8">()</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> container </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'cart-items'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> totalEl </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'cart-total'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> countEl </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'cart-count'</span><span class="s8">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>container</span><span class="s8">.</span><span class="s1">innerHTML </span><span class="s8">=</span><span class="s1"> </span><span class="s11">''</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s1"> total </span><span class="s8">=</span><span class="s1"> </span><span class="s12">0</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s1"> count </span><span class="s8">=</span><span class="s1"> </span><span class="s12">0</span><span class="s8">;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> </span><span class="s8">(</span><span class="s1">cart</span><span class="s8">.</span><span class="s1">length </span><span class="s8">===</span><span class="s1"> </span><span class="s12">0</span><span class="s8">)</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>container</span><span class="s8">.</span><span class="s4">innerHTML </span><span class="s8">=</span><span class="s4"> </span><span class="s1">'&lt;div class="text-center py-10"&gt;&lt;i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-stone-100"&gt;&lt;/i&gt;&lt;p class="text-stone-400 text-sm font-medium"&gt;Tu carrito está vacío.&lt;/p&gt;&lt;/div&gt;'</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>lucide</span><span class="s8">.</span><span class="s1">createIcons</span><span class="s8">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">}</span><span class="s1"> </span><span class="s7">else</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>cart</span><span class="s8">.</span><span class="s1">forEach</span><span class="s8">(</span><span class="s1">item </span><span class="s8">=&gt;</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>total </span><span class="s8">+=</span><span class="s1"> item</span><span class="s8">.</span><span class="s1">price </span><span class="s8">*</span><span class="s1"> item</span><span class="s8">.</span><span class="s1">qty</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>count </span><span class="s8">+=</span><span class="s1"> item</span><span class="s8">.</span><span class="s1">qty</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>container</span><span class="s8">.</span><span class="s1">innerHTML </span><span class="s8">+=</span><span class="s1"> </span><span class="s11">`</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-4 bg-stone-50 p-4 rounded-2xl border border-stone-100"&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;img src="</span><span class="s8">${</span><span class="s4">item</span><span class="s8">.</span><span class="s4">img</span><span class="s8">}</span><span class="s1">" class="w-16 h-16 rounded-xl object-cover shadow-sm"&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-sm text-stone-900"&gt;</span><span class="s8">${</span><span class="s4">item</span><span class="s8">.</span><span class="s4">name</span><span class="s8">}</span><span class="s1">&lt;/h4&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-[10px] text-stone-400 font-bold uppercase tracking-tighter"&gt;</span><span class="s8">${</span><span class="s4">item</span><span class="s8">.</span><span class="s4">qty</span><span class="s8">}</span><span class="s1"> x </span><span class="s13">$</span><span class="s8">${</span><span class="s4">item</span><span class="s8">.</span><span class="s4">price</span><span class="s8">.</span><span class="s4">toFixed</span><span class="s8">(</span><span class="s12">2</span><span class="s8">)}</span><span class="s1">&lt;/p&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="font-bold text-stone-900 text-sm"&gt;</span><span class="s13">$</span><span class="s8">${(</span><span class="s4">item</span><span class="s8">.</span><span class="s4">qty </span><span class="s8">*</span><span class="s4"> item</span><span class="s8">.</span><span class="s4">price</span><span class="s8">).</span><span class="s4">toFixed</span><span class="s8">(</span><span class="s12">2</span><span class="s8">)}</span><span class="s1">&lt;/span&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>`</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>totalEl</span><span class="s8">.</span><span class="s1">innerText </span><span class="s8">=</span><span class="s1"> </span><span class="s11">`</span><span class="s13">$</span><span class="s8">${</span><span class="s1">total</span><span class="s8">.</span><span class="s1">toFixed</span><span class="s8">(</span><span class="s12">2</span><span class="s8">)}</span><span class="s11">`</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>countEl</span><span class="s8">.</span><span class="s1">innerText </span><span class="s8">=</span><span class="s1"> count</span><span class="s8">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> showToast</span><span class="s8">()</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> toast </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'toast'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>toast</span><span class="s8">.</span><span class="s1">classList</span><span class="s8">.</span><span class="s1">remove</span><span class="s8">(</span><span class="s11">'opacity-0'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout</span><span class="s8">(()</span><span class="s1"> </span><span class="s8">=&gt;</span><span class="s1"> toast</span><span class="s8">.</span><span class="s1">classList</span><span class="s8">.</span><span class="s1">add</span><span class="s8">(</span><span class="s11">'opacity-0'</span><span class="s8">),</span><span class="s1"> </span><span class="s12">2500</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// Configuración de Gráfico Clínico</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> ctx </span><span class="s8">=</span><span class="s1"> document</span><span class="s8">.</span><span class="s1">getElementById</span><span class="s8">(</span><span class="s11">'clinicalChart'</span><span class="s8">).</span><span class="s1">getContext</span><span class="s8">(</span><span class="s11">'2d'</span><span class="s8">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">new</span><span class="s1"> </span><span class="s14">Chart</span><span class="s8">(</span><span class="s1">ctx</span><span class="s8">,</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>type</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'line'</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>data</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>labels</span><span class="s8">:</span><span class="s4"> </span><span class="s8">[</span><span class="s1">'Día 1'</span><span class="s8">,</span><span class="s4"> </span><span class="s1">'Día 7'</span><span class="s8">,</span><span class="s4"> </span><span class="s1">'Día 14'</span><span class="s8">,</span><span class="s4"> </span><span class="s1">'Día 21'</span><span class="s8">,</span><span class="s4"> </span><span class="s1">'Día 30'</span><span class="s8">],</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>datasets</span><span class="s8">:</span><span class="s1"> </span><span class="s8">[{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span>label</span><span class="s8">:</span><span class="s4"> </span><span class="s1">'% de Hidratación Retenida'</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>data</span><span class="s8">:</span><span class="s1"> </span><span class="s8">[</span><span class="s12">15</span><span class="s8">,</span><span class="s1"> </span><span class="s12">45</span><span class="s8">,</span><span class="s1"> </span><span class="s12">68</span><span class="s8">,</span><span class="s1"> </span><span class="s12">82</span><span class="s8">,</span><span class="s1"> </span><span class="s12">92</span><span class="s8">],</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'#d97706'</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'rgba(217, 119, 6, 0.1)'</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth</span><span class="s8">:</span><span class="s1"> </span><span class="s12">3</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>pointBackgroundColor</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'#1c1917'</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>pointBorderColor</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'#ffffff'</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>pointRadius</span><span class="s8">:</span><span class="s1"> </span><span class="s12">6</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>pointHoverRadius</span><span class="s8">:</span><span class="s1"> </span><span class="s12">8</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>fill</span><span class="s8">:</span><span class="s1"> </span><span class="s7">true</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>tension</span><span class="s8">:</span><span class="s1"> </span><span class="s12">0.4</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">}]</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>options</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>responsive</span><span class="s8">:</span><span class="s1"> </span><span class="s7">true</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>maintainAspectRatio</span><span class="s8">:</span><span class="s1"> </span><span class="s7">false</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>plugins</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>legend</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> display</span><span class="s8">:</span><span class="s1"> </span><span class="s7">false</span><span class="s1"> </span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>scales</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>y</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>beginAtZero</span><span class="s8">:</span><span class="s1"> </span><span class="s7">true</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>max</span><span class="s8">:</span><span class="s1"> </span><span class="s12">100</span><span class="s8">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>grid</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> color</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'#f5f5f4'</span><span class="s1"> </span><span class="s8">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>ticks</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> font</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> weight</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'bold'</span><span class="s1"> </span><span class="s8">},</span><span class="s1"> color</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'#a8a29e'</span><span class="s1"> </span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>x</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>grid</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> display</span><span class="s8">:</span><span class="s1"> </span><span class="s7">false</span><span class="s1"> </span><span class="s8">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>ticks</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> font</span><span class="s8">:</span><span class="s1"> </span><span class="s8">{</span><span class="s1"> weight</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'bold'</span><span class="s1"> </span><span class="s8">},</span><span class="s1"> color</span><span class="s8">:</span><span class="s1"> </span><span class="s11">'#a8a29e'</span><span class="s1"> </span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s8">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">});</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold tracking-tighter text-stone-900 uppercase italic">Aura<span class="text-amber-600 not-italic">Skin</span></span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <button onclick="toggleCart()" class="relative p-2 text-stone-900 hover:text-amber-600 transition-colors">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-sm">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrito Lateral -->
+    <div id="cart-overlay" class="fixed inset-0 bg-stone-900/40 z-[60] hidden backdrop-blur-sm" onclick="toggleCart()"></div>
+    <aside id="cart-sidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[70] shadow-2xl translate-x-full flex flex-col cart-sidebar">
+        <div class="p-6 border-b border-stone-100 flex justify-between items-center">
+            <h2 class="text-xl font-bold">Bolsa de Compra</h2>
+            <button onclick="toggleCart()" class="p-2 hover:bg-stone-50 rounded-full text-stone-400"><i data-lucide="x"></i></button>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <p class="text-center text-stone-400 py-10 font-medium text-sm text-center">Tu bolsa está vacía.</p>
+        </div>
+        <div class="p-6 border-t border-stone-100 bg-stone-50">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-stone-500 font-medium text-sm text-left">Total Estimado</span>
+                <span id="cart-total" class="text-2xl font-bold text-stone-900">$0.00</span>
+            </div>
+            <button class="w-full bg-stone-900 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors flex items-center justify-center gap-3 text-sm">
+                Finalizar Pedido
+            </button>
+            <p class="text-[10px] text-center text-stone-400 mt-4 uppercase tracking-widest font-bold">Pago Seguro por Mercado Pago</p>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+            <div class="md:w-1/2">
+                <span class="text-xs font-bold uppercase tracking-[0.3em] text-amber-600 mb-4 block">Cosmética Avanzada</span>
+                <h1 class="text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight">La ciencia de <br><span class="italic text-amber-600">tu resplandor.</span></h1>
+                <p class="text-lg text-stone-600 mb-10 max-w-lg leading-relaxed mx-auto md:mx-0">Fórmulas botánicas diseñadas para restaurar, proteger y embellecer tu piel con resultados medibles desde la primera semana.</p>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="#productos" class="px-8 py-4 bg-stone-900 text-white rounded-full font-bold hover:bg-stone-800 transition-all shadow-lg text-sm uppercase tracking-widest">Comprar Ahora</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="w-full h-[400px] md:h-[500px] bg-stone-200 rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.01]">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop" alt="[Imagen de Crema Aura Skin]" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catálogo de Productos -->
+    <section id="productos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-stone-900 mb-4 text-center">Nuestra Colección Esencial</h2>
+                <p class="text-stone-500 max-w-2xl mx-auto text-center">Esta sección presenta nuestros productos estrella. Cada crema ha sido formulada para necesidades específicas de la piel.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Producto 1 -->
+                <div class="product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm">
+                    <div class="relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600" alt="[Sérum de Vitamina C]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 text-stone-900">Sérum Vitamina C</h3>
+                    <p class="text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Luminosidad & Tono</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-2xl font-bold text-stone-900">$45.00</span>
+                        <button onclick="addToCart('Sérum Vitamina C', 45, 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=200')" class="bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm">
+                    <div class="relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600" alt="[Crema Nocturna]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 text-stone-900">Crema Nocturne</h3>
+                    <p class="text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Reparación Celular</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-2xl font-bold text-stone-900">$38.00</span>
+                        <button onclick="addToCart('Crema Nocturne', 38, 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=200')" class="bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm">
+                    <div class="relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=600" alt="[Bálsamo Pureza]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-1 text-stone-900">Bálsamo Pureza</h3>
+                    <p class="text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Limpieza Consciente</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-2xl font-bold text-stone-900">$22.00</span>
+                        <button onclick="addToCart('Bálsamo Pureza', 22, 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=200')" class="bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Eficacia Clínica -->
+    <section id="ciencia" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 text-center md:text-left">
+                    <h2 class="text-4xl font-bold mb-6 italic text-stone-900">Resultados <span class="text-amber-600">Comprobados.</span></h2>
+                    <p class="text-lg text-stone-600 mb-8 leading-relaxed text-left">
+                        En Aura Skin, los datos respaldan nuestra belleza. Este gráfico ilustra el incremento en la retención de hidratación durante un tratamiento de 30 días con nuestros productos esenciales.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 mb-8 text-center">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                            <p class="text-4xl font-bold text-stone-900">92%</p>
+                            <p class="text-xs text-stone-400 uppercase tracking-widest font-bold mt-2">Piel más hidratada</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                            <p class="text-4xl font-bold text-stone-900">85%</p>
+                            <p class="text-xs text-stone-400 uppercase tracking-widest font-bold mt-2">Reducción de líneas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <div class="chart-container">
+                        <canvas id="clinicalChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-stone-400 mt-6 italic">Gráfico de Eficacia: % de hidratación (Día 1 al Día 30).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-stone-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-12">
+                <span class="text-3xl font-bold tracking-tighter uppercase italic text-center">Aura<span class="text-amber-600 not-italic">Skin</span></span>
+                <p class="mt-4 text-stone-500 max-w-sm mx-auto text-sm italic leading-relaxed text-center">Expertos en cosmética botánica avanzada.</p>
+            </div>
+            <div class="flex justify-center gap-8 mb-12 text-stone-400 text-xs font-bold uppercase tracking-widest">
+                <a href="#" class="hover:text-amber-600 transition-colors">Instagram</a>
+                <a href="#" class="hover:text-amber-600 transition-colors">Soporte</a>
+            </div>
+            <div class="pt-8 border-t border-stone-800 text-stone-600 text-[10px] uppercase font-bold tracking-[0.4em] text-center">
+                &copy; 2026 Aura Skin Cosmetic.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        let cart = [];
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            const overlay = document.getElementById('cart-overlay');
+            sidebar.classList.toggle('cart-open');
+            overlay.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price, img) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ name, price, img, qty: 1 });
+            }
+            updateCartUI();
+            if (!document.getElementById('cart-sidebar').classList.contains('cart-open')) {
+                toggleCart();
+            }
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+            const countEl = document.getElementById('cart-count');
+            
+            container.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-center text-stone-400 py-10 font-medium text-sm text-center">Tu bolsa está vacía.</p>';
+            } else {
+                cart.forEach(item => {
+                    total += item.price * item.qty;
+                    count += item.qty;
+                    container.innerHTML += `
+                        <div class="flex items-center gap-4 bg-stone-50 p-4 rounded-2xl border border-stone-100">
+                            <img src="${item.img}" class="w-12 h-12 rounded-xl object-cover shadow-sm">
+                            <div class="flex-1 text-left">
+                                <h4 class="font-bold text-sm text-stone-900">${item.name}</h4>
+                                <p class="text-[10px] text-stone-400 font-bold uppercase tracking-tighter">${item.qty} x $${item.price.toFixed(2)}</p>
+                            </div>
+                            <span class="font-bold text-stone-900 text-sm">$${(item.qty * item.price).toFixed(2)}</span>
+                        </div>
+                    `;
+                });
+            }
+            totalEl.innerText = `$${total.toFixed(2)}`;
+            countEl.innerText = count;
+        }
+
+        const ctx = document.getElementById('clinicalChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Día 1', 'Día 7', 'Día 14', 'Día 21', 'Día 30'],
+                datasets: [{
+                    label: '% Hidratación',
+                    data: [15, 45, 68, 82, 92],
+                    borderColor: '#d97706',
+                    backgroundColor: 'rgba(217, 119, 6, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 100 },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
