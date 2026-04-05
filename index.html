@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Skin | Tienda Oficial de Belleza</title>
+    <title>Natural Cream Care | Belleza Natural</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
         
+        /* Paleta Pistache Personalizada */
+        :root {
+            --pistache-light: #f1f8e9;
+            --pistache-main: #93c572;
+            --pistache-dark: #4f7942;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fafaf9;
+            background-color: #ffffff;
             color: #1c1917;
             scroll-behavior: smooth;
         }
@@ -20,6 +27,11 @@
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
+
+        .bg-pistache { background-color: var(--pistache-main); }
+        .text-pistache { color: var(--pistache-main); }
+        .border-pistache { border-color: var(--pistache-main); }
+        .bg-pistache-light { background-color: var(--pistache-light); }
 
         .chart-container {
             position: relative;
@@ -32,11 +44,19 @@
             background: #ffffff;
             border-radius: 1.5rem;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px -5px rgba(147, 197, 114, 0.2);
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #f1f8e9;
+            transition: all 0.3s ease;
         }
 
         .product-card:hover {
             transform: translateY(-8px);
+            border-color: var(--pistache-main);
+            box-shadow: 0 10px 25px -10px rgba(147, 197, 114, 0.3);
         }
 
         .cart-sidebar {
@@ -48,19 +68,24 @@
         }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden">
+<body class="antialiased overflow-x-hidden text-stone-800">
 
     <!-- Navegación -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-green-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <span class="text-2xl font-bold tracking-tighter text-stone-900 uppercase italic">Aura<span class="text-amber-600 not-italic">Skin</span></span>
+                    <span class="text-2xl font-bold tracking-tighter text-stone-900 uppercase italic">Natural Cream<span class="text-pistache not-italic"> Care</span></span>
+                </div>
+                <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest text-stone-500">
+                    <a href="#productos" class="hover:text-pistache transition-colors">Catálogo</a>
+                    <a href="#ciencia" class="hover:text-pistache transition-colors">Eficacia</a>
+                    <a href="#contacto" class="hover:text-pistache transition-colors">Contacto</a>
                 </div>
                 <div class="flex items-center gap-6">
-                    <button onclick="toggleCart()" class="relative p-2 text-stone-900 hover:text-amber-600 transition-colors">
+                    <button onclick="toggleCart()" class="relative p-2 text-stone-900 hover:text-pistache transition-colors">
                         <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-sm">0</span>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-pistache text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-sm">0</span>
                     </button>
                 </div>
             </div>
@@ -68,21 +93,21 @@
     </nav>
 
     <!-- Carrito Lateral -->
-    <div id="cart-overlay" class="fixed inset-0 bg-stone-900/40 z-[60] hidden backdrop-blur-sm" onclick="toggleCart()"></div>
+    <div id="cart-overlay" class="fixed inset-0 bg-stone-900/20 z-[60] hidden backdrop-blur-sm" onclick="toggleCart()"></div>
     <aside id="cart-sidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[70] shadow-2xl translate-x-full flex flex-col cart-sidebar">
         <div class="p-6 border-b border-stone-100 flex justify-between items-center">
             <h2 class="text-xl font-bold">Bolsa de Compra</h2>
             <button onclick="toggleCart()" class="p-2 hover:bg-stone-50 rounded-full text-stone-400"><i data-lucide="x"></i></button>
         </div>
         <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
-            <p class="text-center text-stone-400 py-10 font-medium text-sm text-center">Tu bolsa está vacía.</p>
+            <p class="text-center text-stone-400 py-10 font-medium text-sm">Tu carrito está vacío.</p>
         </div>
         <div class="p-6 border-t border-stone-100 bg-stone-50">
             <div class="flex justify-between items-center mb-6">
-                <span class="text-stone-500 font-medium text-sm text-left">Total Estimado</span>
+                <span class="text-stone-500 font-medium text-sm">Total</span>
                 <span id="cart-total" class="text-2xl font-bold text-stone-900">$0.00</span>
             </div>
-            <button class="w-full bg-stone-900 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors flex items-center justify-center gap-3 text-sm">
+            <button class="w-full bg-pistache text-white py-4 rounded-xl font-bold hover:brightness-95 transition-all flex items-center justify-center gap-3 text-sm">
                 Finalizar Pedido
             </button>
             <p class="text-[10px] text-center text-stone-400 mt-4 uppercase tracking-widest font-bold">Pago Seguro por Mercado Pago</p>
@@ -90,19 +115,22 @@
     </aside>
 
     <!-- Hero Section -->
-    <header class="pt-32 pb-20 bg-stone-100">
+    <header class="pt-32 pb-20 bg-pistache-light/30">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
             <div class="md:w-1/2">
-                <span class="text-xs font-bold uppercase tracking-[0.3em] text-amber-600 mb-4 block">Cosmética Avanzada</span>
-                <h1 class="text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight">La ciencia de <br><span class="italic text-amber-600">tu resplandor.</span></h1>
-                <p class="text-lg text-stone-600 mb-10 max-w-lg leading-relaxed mx-auto md:mx-0">Fórmulas botánicas diseñadas para restaurar, proteger y embellecer tu piel con resultados medibles desde la primera semana.</p>
+                <span class="text-xs font-bold uppercase tracking-[0.3em] text-pistache mb-4 block">Fórmula Original</span>
+                <h1 class="text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight">Tu piel merece <br><span class="italic text-pistache">lo más puro.</span></h1>
+                <p class="text-lg text-stone-600 mb-10 max-w-lg leading-relaxed mx-auto md:mx-0">
+                    Descubre nuestra crema hidratante insignia con <strong>ácido hialurónico, aceite de jojoba y aloe vera orgánico</strong>. Cuidado facial honesto para un brillo natural.
+                </p>
                 <div class="flex justify-center md:justify-start gap-4">
-                    <a href="#productos" class="px-8 py-4 bg-stone-900 text-white rounded-full font-bold hover:bg-stone-800 transition-all shadow-lg text-sm uppercase tracking-widest">Comprar Ahora</a>
+                    <a href="#productos" class="px-8 py-4 bg-pistache text-white rounded-full font-bold hover:brightness-95 transition-all shadow-lg text-sm uppercase tracking-widest">Ver Catálogo</a>
                 </div>
             </div>
             <div class="md:w-1/2 relative">
-                <div class="w-full h-[400px] md:h-[500px] bg-stone-200 rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.01]">
-                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop" alt="[Imagen de Crema Aura Skin]" class="w-full h-full object-cover">
+                <div class="w-full h-[400px] md:h-[550px] bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-white transition-transform hover:scale-[1.01]">
+                    <!-- Imagen Actualizada con la foto del usuario -->
+                    <img src="PHOTO-2026-03-30-15-19-43.jpg" alt="[Producto Natural Cream Care]" class="w-full h-full object-cover object-center">
                 </div>
             </div>
         </div>
@@ -112,51 +140,51 @@
     <section id="productos" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-stone-900 mb-4 text-center">Nuestra Colección Esencial</h2>
-                <p class="text-stone-500 max-w-2xl mx-auto text-center">Esta sección presenta nuestros productos estrella. Cada crema ha sido formulada para necesidades específicas de la piel.</p>
+                <h2 class="text-4xl font-bold text-stone-900 mb-4">Nuestra Colección Verde</h2>
+                <p class="text-stone-500 max-w-2xl mx-auto">Ingredientes frescos extraídos de forma ética para el cuidado de tu rostro.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Producto 1 -->
-                <div class="product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm">
-                    <div class="relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600" alt="[Sérum de Vitamina C]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
+                <div class="product-card rounded-[2rem] p-6 shadow-sm">
+                    <div class="relative h-64 bg-pistache-light/20 rounded-2xl mb-6 overflow-hidden group">
+                        <img src="PHOTO-2026-03-30-15-19-43.jpg" alt="[Crema Hidratante]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
                     </div>
-                    <h3 class="text-xl font-bold mb-1 text-stone-900">Sérum Vitamina C</h3>
-                    <p class="text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Luminosidad & Tono</p>
+                    <h3 class="text-xl font-bold mb-1 text-stone-900">Hidratante Premium</h3>
+                    <p class="text-xs text-pistache mb-4 uppercase tracking-widest font-bold">Hialurónico & Aloe</p>
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-2xl font-bold text-stone-900">$45.00</span>
-                        <button onclick="addToCart('Sérum Vitamina C', 45, 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=200')" class="bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md">
+                        <button onclick="addToCart('Hidratante Premium', 45, 'PHOTO-2026-03-30-15-19-43.jpg')" class="bg-pistache text-white p-4 rounded-2xl hover:brightness-95 transition-all shadow-md">
                             <i data-lucide="plus" class="w-5 h-5"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Producto 2 -->
-                <div class="product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm">
-                    <div class="relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group">
+                <div class="product-card rounded-[2rem] p-6 shadow-sm">
+                    <div class="relative h-64 bg-pistache-light/20 rounded-2xl mb-6 overflow-hidden group">
                         <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600" alt="[Crema Nocturna]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
                     </div>
                     <h3 class="text-xl font-bold mb-1 text-stone-900">Crema Nocturne</h3>
-                    <p class="text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Reparación Celular</p>
+                    <p class="text-xs text-pistache mb-4 uppercase tracking-widest font-bold">Botánica Nocturna</p>
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-2xl font-bold text-stone-900">$38.00</span>
-                        <button onclick="addToCart('Crema Nocturne', 38, 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=200')" class="bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md">
+                        <button onclick="addToCart('Crema Nocturne', 38, 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=400')" class="bg-pistache text-white p-4 rounded-2xl hover:brightness-95 transition-all shadow-md">
                             <i data-lucide="plus" class="w-5 h-5"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Producto 3 -->
-                <div class="product-card bg-white border border-stone-100 rounded-[2rem] p-6 transition-all duration-300 shadow-sm">
-                    <div class="relative h-64 bg-stone-50 rounded-2xl mb-6 overflow-hidden group">
+                <div class="product-card rounded-[2rem] p-6 shadow-sm">
+                    <div class="relative h-64 bg-pistache-light/20 rounded-2xl mb-6 overflow-hidden group">
                         <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=600" alt="[Bálsamo Pureza]" class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500">
                     </div>
                     <h3 class="text-xl font-bold mb-1 text-stone-900">Bálsamo Pureza</h3>
-                    <p class="text-xs text-stone-400 mb-4 uppercase tracking-widest font-bold">Limpieza Consciente</p>
+                    <p class="text-xs text-pistache mb-4 uppercase tracking-widest font-bold">Extractos Limpios</p>
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-2xl font-bold text-stone-900">$22.00</span>
-                        <button onclick="addToCart('Bálsamo Pureza', 22, 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=200')" class="bg-stone-900 text-white p-4 rounded-2xl hover:bg-amber-600 transition-colors shadow-md">
+                        <button onclick="addToCart('Bálsamo Pureza', 22, 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=200')" class="bg-pistache text-white p-4 rounded-2xl hover:brightness-95 transition-all shadow-md">
                             <i data-lucide="plus" class="w-5 h-5"></i>
                         </button>
                     </div>
@@ -165,23 +193,23 @@
         </div>
     </section>
 
-    <!-- Sección de Eficacia Clínica -->
-    <section id="ciencia" class="py-24 bg-stone-50">
+    <!-- Sección de Eficacia -->
+    <section id="ciencia" class="py-24 bg-pistache-light/20">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-1/2 text-center md:text-left">
-                    <h2 class="text-4xl font-bold mb-6 italic text-stone-900">Resultados <span class="text-amber-600">Comprobados.</span></h2>
+                    <h2 class="text-4xl font-bold mb-6 italic text-stone-900">El poder de lo <span class="text-pistache">natural.</span></h2>
                     <p class="text-lg text-stone-600 mb-8 leading-relaxed text-left">
-                        En Aura Skin, los datos respaldan nuestra belleza. Este gráfico ilustra el incremento en la retención de hidratación durante un tratamiento de 30 días con nuestros productos esenciales.
+                        Nuestras pruebas demuestran que los ingredientes botánicos de Natural Cream Care superan en hidratación a los rellenos sintéticos comunes.
                     </p>
                     <div class="grid grid-cols-2 gap-8 mb-8 text-center">
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                            <p class="text-4xl font-bold text-stone-900">92%</p>
-                            <p class="text-xs text-stone-400 uppercase tracking-widest font-bold mt-2">Piel más hidratada</p>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-green-50">
+                            <p class="text-4xl font-bold text-pistache">92%</p>
+                            <p class="text-xs text-stone-400 uppercase tracking-widest font-bold mt-2">Origen Orgánico</p>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                            <p class="text-4xl font-bold text-stone-900">85%</p>
-                            <p class="text-xs text-stone-400 uppercase tracking-widest font-bold mt-2">Reducción de líneas</p>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-green-50">
+                            <p class="text-4xl font-bold text-pistache">24h</p>
+                            <p class="text-xs text-stone-400 uppercase tracking-widest font-bold mt-2">Hidratación Activa</p>
                         </div>
                     </div>
                 </div>
@@ -189,7 +217,6 @@
                     <div class="chart-container">
                         <canvas id="clinicalChart"></canvas>
                     </div>
-                    <p class="text-center text-xs text-stone-400 mt-6 italic">Gráfico de Eficacia: % de hidratación (Día 1 al Día 30).</p>
                 </div>
             </div>
         </div>
@@ -199,18 +226,29 @@
     <footer id="contacto" class="bg-stone-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="mb-12">
-                <span class="text-3xl font-bold tracking-tighter uppercase italic text-center">Aura<span class="text-amber-600 not-italic">Skin</span></span>
-                <p class="mt-4 text-stone-500 max-w-sm mx-auto text-sm italic leading-relaxed text-center">Expertos en cosmética botánica avanzada.</p>
+                <span class="text-3xl font-bold tracking-tighter uppercase italic text-center">Natural Cream<span class="text-amber-600 not-italic"> Care</span></span>
+                <p class="mt-4 text-stone-500 max-w-sm mx-auto text-sm italic leading-relaxed text-center">Cuidado facial honesto, verde y efectivo.</p>
             </div>
             <div class="flex justify-center gap-8 mb-12 text-stone-400 text-xs font-bold uppercase tracking-widest">
-                <a href="#" class="hover:text-amber-600 transition-colors">Instagram</a>
-                <a href="#" class="hover:text-amber-600 transition-colors">Soporte</a>
+                <a href="#" class="hover:text-pistache transition-colors">Instagram</a>
+                <a href="#" class="hover:text-pistache transition-colors">Soporte</a>
             </div>
             <div class="pt-8 border-t border-stone-800 text-stone-600 text-[10px] uppercase font-bold tracking-[0.4em] text-center">
-                &copy; 2026 Aura Skin Cosmetic.
+                &copy; 2026 Natural Cream Care. Todos los derechos reservados.
             </div>
         </div>
     </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/TUNUMERO" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-transform hover:scale-110 z-[100] flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Notificación -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-stone-900 text-white px-6 py-3 rounded-full shadow-2xl z-[100] opacity-0 transition-opacity pointer-events-none flex items-center gap-3">
+        <i data-lucide="check-circle" class="text-pistache w-5 h-5"></i>
+        <span class="text-sm font-bold">Añadido a tu bolsa</span>
+    </div>
 
     <script>
         lucide.createIcons();
@@ -231,6 +269,7 @@
                 cart.push({ name, price, img, qty: 1 });
             }
             updateCartUI();
+            showToast();
             if (!document.getElementById('cart-sidebar').classList.contains('cart-open')) {
                 toggleCart();
             }
@@ -252,8 +291,8 @@
                     total += item.price * item.qty;
                     count += item.qty;
                     container.innerHTML += `
-                        <div class="flex items-center gap-4 bg-stone-50 p-4 rounded-2xl border border-stone-100">
-                            <img src="${item.img}" class="w-12 h-12 rounded-xl object-cover shadow-sm">
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl border border-green-50">
+                            <img src="${item.img}" class="w-16 h-16 rounded-xl object-cover shadow-sm">
                             <div class="flex-1 text-left">
                                 <h4 class="font-bold text-sm text-stone-900">${item.name}</h4>
                                 <p class="text-[10px] text-stone-400 font-bold uppercase tracking-tighter">${item.qty} x $${item.price.toFixed(2)}</p>
@@ -267,6 +306,12 @@
             countEl.innerText = count;
         }
 
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0');
+            setTimeout(() => toast.classList.add('opacity-0'), 2500);
+        }
+
         const ctx = document.getElementById('clinicalChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
@@ -274,12 +319,14 @@
                 labels: ['Día 1', 'Día 7', 'Día 14', 'Día 21', 'Día 30'],
                 datasets: [{
                     label: '% Hidratación',
-                    data: [15, 45, 68, 82, 92],
-                    borderColor: '#d97706',
-                    backgroundColor: 'rgba(217, 119, 6, 0.1)',
+                    data: [20, 50, 75, 88, 96],
+                    borderColor: '#93c572',
+                    backgroundColor: 'rgba(147, 197, 114, 0.1)',
                     borderWidth: 3,
                     fill: true,
-                    tension: 0.4
+                    tension: 0.4,
+                    pointBackgroundColor: '#4f7942',
+                    pointRadius: 5
                 }]
             },
             options: {
